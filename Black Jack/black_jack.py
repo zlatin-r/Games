@@ -79,7 +79,7 @@ def take_bet(chips):
             print("Sorry please provide an integer")
         else:
             if chips.bet > chips.total:
-                print("Sorry, you do not have enough chips! You have: {}".format(chips.total))
+                print(f"Sorry, you do not have enough chips! You have: {chips.total}")
             else:
                 break
 
@@ -132,21 +132,25 @@ def show_all(player, dealer):
 
 
 def player_busts(player, dealer, chips):
+    print()
     print("BUST PLAYER!")
     chips.lose_bet()
 
 
 def player_wins(player, dealer, chips):
+    print()
     print("PLAYER WINS!")
     chips.win_bet()
 
 
 def dealer_busts(player, dealer, chips):
+    print()
     print("PLAYER WINS! DEALER BUSTED")
     chips.win_bet()
 
 
 def dealer_wins(player, dealer, chips):
+    print()
     print("DEALER WINS!")
     chips.lose_bet()
 
