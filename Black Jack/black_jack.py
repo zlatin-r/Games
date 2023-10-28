@@ -3,8 +3,7 @@ import random
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5, 'Six': 6, 'Seven': 7, 'Eight': 8, 'Nine': 9, 'Ten': 10,
-          'Jack': 10,
-          'Queen': 10, 'King': 10, 'Ace': 11}
+          'Jack': 10, 'Queen': 10, 'King': 10, 'Ace': 11}
 
 playing = True
 
@@ -29,7 +28,6 @@ class Deck:
                 self.deck.append(Card(suit, rank))
 
     def __str__(self):
-
         return "\n".join(map(str, self.deck))
 
     def shuffle(self):
@@ -61,7 +59,6 @@ class Hand:
 
 
 class Chips:
-
     def __init__(self, total=100):
         self.total = total  # This can be set to a default value or supplied by a user input
         self.bet = 0
@@ -82,7 +79,7 @@ def take_bet(chips):
             print("Sorry please provide an integer")
         else:
             if chips.bet > chips.total:
-                print("Sorry, you dp not have enough chips! You have: {}".format(chips.total))
+                print("Sorry, you do not have enough chips! You have: {}".format(chips.total))
             else:
                 break
 
@@ -110,13 +107,14 @@ def hit_or_stand(deck, hand):
 
 
 def show_some(player, dealer):
-    print("\n Dealer's Hand: ")
+    print("\nDealer's Hand: ")
     print("First card hidden!")
     print(dealer.cards[1])
-
+    print("----------------")
     print("Player's Hand: ")
     for card in player.cards:
         print(card)
+    print("----------------")
 
 
 def show_all(player, dealer):
@@ -159,8 +157,9 @@ def push(player, dealer):
 
 while True:
     # Print an opening statement
+    print("$                               $                                     $")
     print('Welcome to BlackJack! Get as close to 21 as you can without going over!\n\
-    Dealer hits until she reaches 17. Aces count as 1 or 11.')
+    Dealer hits until she reaches 17. Aces count as 1 or 11.\n')
 
     # Create & shuffle the deck, deal two cards to each player
     deck = Deck()
