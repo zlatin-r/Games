@@ -110,10 +110,12 @@ def show_some(player, dealer):
     print("\nDealer's Hand: ")
     print("First card hidden!")
     print(dealer.cards[1])
+    print(f"Value of dealer's Hand is: {dealer.value}")
     print("----------------")
     print("Player's Hand: ")
     for card in player.cards:
         print(card)
+    print(f"Value of player's Hand is: {player.value}")
     print("----------------")
 
 
@@ -161,7 +163,7 @@ def push(player, dealer):
 
 while True:
     # Print an opening statement
-    print("$                               $                                     $")
+    print("$                                 $$                                  $")
     print('Welcome to BlackJack! Get as close to 21 as you can without going over!\n\
     Dealer hits until she reaches 17. Aces count as 1 or 11.\n')
 
@@ -221,7 +223,7 @@ while True:
         else:
             push(player_hand, dealer_hand)
 
-            # Inform Player of their chips total
+    # Inform Player of their chips total
     print("\nPlayer's winnings stand at", player_chips.total)
 
     # Ask to play again
